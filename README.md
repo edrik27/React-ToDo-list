@@ -1,69 +1,45 @@
-# React + TypeScript + Vite
+# Ejercicio de To Do List con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Video Demostrativo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![alt text](./readme_assets/Video_demostrativo.mp4)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Explicación del código fuente
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1️ Interface ToDo
+se crea una interface toDo que define la estrutura de las tareas
+esta esta en la carpeta `./src/interface`
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+![alt text](./readme_assets/interface.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2️ Componente ToDoList
+se crea un Staful Componet llamado ToDoList para manejar la lista de tareas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 3️ Estados del Componente
+se usan dos useState:
+- **`todos`**: para manejar la lista de tareas
+- **`inputValue`**: para controlar un campo de texto
+
+![alt text](./readme_assets/usestate.png)
+
+---
+
+### 4️ Función Agregar Tareas
+se usa la funcion addTodo para agregar nuevas tareas a la lista usando el setTodos
+
+![alt text](./readme_assets/addFuntion.png)
+
+---
+
+### 5️ Funcion Completar Tareas
+la funcion completeTask sirve para marcar las tareas como completadas, recibe como parametro el id de la tarea, realiza un map la lista para buscar y cambiar el estado y settea el nuevo valor de la tarea
+
+![alt text](./readme_assets/completeFunction.png)
