@@ -4,10 +4,7 @@
 
 ## Video Demostrativo
 
-<video width="600" controls>
-  <source src="https://drive.google.com/file/d/1sMiVvqqsrrPcRIk5sTbv-aFWh611nFGB/view?usp=sharing" type="video/mp4">
-  Tu navegador no soporta el tag de video.
-</video>
+![alt text](./readme_assets/Video_demostrativo.gif)
 
 ---
 
